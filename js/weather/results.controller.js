@@ -13,6 +13,7 @@
         var rc = this;  //controllerAS
         console.log(getCity.data);
         rc.cityData = getCity.data;
+        rc.tempsToShow = '1';
 
         var map = new google.maps.Map(document.getElementById('googleMap'), {
             center: {lat: rc.cityData.coord.lat, lng: rc.cityData.coord.lon},
