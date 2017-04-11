@@ -10,10 +10,10 @@
         var wc = this;  //controllerAS
 
         wc.ibCity = 'belgrade';
-        wc.cityData = {};
-        wc.show = false;
+        //wc.cityData = {};
+        //wc.show = false;
 
-        wc.searchCity = function(param){
+      /*  wc.searchCity = function(param){
             return WeatherService.getApi(param)
                 .success(function(data){
                 console.log(data);
@@ -32,7 +32,7 @@
                 .error(function(data, status){
                     console.log(status);
                 });
-        }
+        }  */
     }
 })();
 

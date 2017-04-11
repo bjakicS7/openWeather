@@ -19,6 +19,19 @@
                         controllerAs: "wc"
                     }
                 }
+            })
+            .state("main.results", {
+                url: '/city/:city',
+                views: {
+                    "results": {
+                        templateUrl: 'js/weather/results.html',
+                        controller: 'resultsController',
+                        controllerAs: 'rc',
+                        resolve: {
+                            getCity: getCity
+                        }
+                    }
+                }
             });
             /*.state("main.town", {
                 url: "/search/:city",
@@ -35,7 +48,13 @@
             });*/
 
         function getCity(WeatherService, $stateParams){
-            return WeatherService.getTownInfo($stateParams.city);
-        }
+            return WeatherService.getApi($stateParams.city)
+                .then(function(data){
+                    return data;
+                });
+                /*.error(function(data, status){
+                    console.log(status);
+                });*/
+            }
     }
 })();

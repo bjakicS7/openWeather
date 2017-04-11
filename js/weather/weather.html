@@ -11,23 +11,10 @@
     <label class="col-sm-2 control-label">Search by:</label>
     <div class="col-sm-offset-2 col-sm-10">
         <div class="btn-group">
-            <button type="button" class="btn btn-info" id="button" ng-click="wc.searchCity(wc.ibCity)" ng-disabled="wc.ibCity === '' || wc.ibCity === undefined">Search city</button>
+            <a  class="btn btn-primary" ui-sref="main.results({city:wc.ibCity})" ng-disabled="wc.ibCity === ''">Search city</a>
         </div>
     </div>
 </div>
 </form>
 
-<div class="row" ng-hide="wc.show === false">
-    <div class="col-xs-6 col-md-3">
-        <h2>{{wc.cityData.name}}</h2>
-        <p>temperatura: {{wc.cityData.main.temp}}°F </p>
-        <p>pritisak: {{wc.cityData.main.pressure}} hPa </p>
-        <p>valznost vazduha: {{wc.cityData.main.humidity}}% </p>
-        <p>Minimalna {{wc.cityData.main.temp_min}}°F  i maximalna dnevna temp: {{wc.cityData.main.temp_max}}°F </p>
-        <p>vidjivost: {{wc.cityData.visibility}} </p>
-        <p>Vetar: brzinja {{wc.cityData.wind.speed}}m/s  i ugao duvanja: {{wc.cityData.wind.deg}} degrees </p>
-    </div>
-
-</div> <!--results -->
-
-<div id="googleMap" style="width:400px;height:400px; margin:auto"> <!--map -->
+<div ui-view="results"></div>
