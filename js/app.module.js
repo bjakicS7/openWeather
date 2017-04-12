@@ -2,5 +2,5 @@
     "use strict";
 
     angular
-        .module("myApp", ["myApp.weather"]);
+        .module("myApp", ["myApp.weather", "myApp.direktiva"]);
 })();

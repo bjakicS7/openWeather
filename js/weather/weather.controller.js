@@ -9,7 +9,7 @@
     function weatherController(WeatherService){
         var wc = this;  //controllerAS
 
-        wc.ibCity = 'belgrade';
+        wc.ibCity = 'beograd';
         //wc.cityData = {};
         //wc.show = false;
 

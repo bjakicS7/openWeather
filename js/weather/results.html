@@ -1,25 +1,28 @@
 <div class="row">
  <div class="col-xs-6 col-md-3">
-
   <label>Prikazi u F
   <input type="radio" ng-model="rc.tempsToShow" value="1" name="show"></label>
   <br>
   <label>Prikazi u C
   <input type="radio" ng-model="rc.tempsToShow" value="2" name="show"></label>
 
-  <h2>{{rc.cityData.name}}</h2>
-  <h2 ng-show="rc.tempsToShow===false">asdfasdf</h2>
-  <p>temperatura: <b ng-show="rc.tempsToShow === '1'">{{rc.cityData.main.temp | temperatures}}</b>   <b ng-show="rc.tempsToShow === '2'">{{ rc.cityData.main.temp | temperatures:1}}</b></p>
-  <p>pritisak: {{rc.cityData.main.pressure}} hPa </p>
-  <p>valznost vazduha: {{rc.cityData.main.humidity}}% </p>
-  <p>Minimalna <b ng-show="rc.tempsToShow === '1'">{{ rc.cityData.main.temp_min | temperatures}}</b><b ng-show="rc.tempsToShow === '2'">{{rc.cityData.main.temp_min | temperatures:1}}</b></p>
-  <p>maximalna dnevna temp: <b ng-show="rc.tempsToShow === '1'">{{ rc.cityData.main.temp_max | temperatures}}</b>  <b ng-show="rc.tempsToShow === '2'">{{rc.cityData.main.temp_max | temperatures:1}}</b></p>
-  <p>vidjivost: {{rc.cityData.visibility}} </p>
-  <p>Vetar: brzinja {{rc.cityData.wind.speed}}m/s  i ugao duvanja: {{rc.cityData.wind.deg}} degrees </p>
- </div>
+   <h2>{{rc.cityData.name}}</h2>
+    <h2 ng-show="rc.tempsToShow===false">asdfasdf</h2>
+    <p>temperatura: <b ng-show="rc.tempsToShow === '1'">{{rc.cityData.main.temp | temperatures}}</b>   <b ng-show="rc.tempsToShow === '2'">{{ rc.cityData.main.temp | temperatures:1}}</b>  <img src="http://openweathermap.org/img/w/{{rc.cityData.weather[0].icon}}.png"></p>
+    <p>pritisak: {{rc.cityData.main.pressure}} hPa </p>
+    <p>valznost vazduha: {{rc.cityData.main.humidity}}% </p>
+    <p>Minimalna <b ng-show="rc.tempsToShow === '1'">{{ rc.cityData.main.temp_min | temperatures}}</b><b ng-show="rc.tempsToShow === '2'">{{rc.cityData.main.temp_min | temperatures:1}}</b></p>
+    <p>maximalna dnevna temp: <b ng-show="rc.tempsToShow === '1'">{{ rc.cityData.main.temp_max | temperatures}}</b>  <b ng-show="rc.tempsToShow === '2'">{{rc.cityData.main.temp_max | temperatures:1}}</b></p>
+    <p>vidjivost: {{rc.cityData.visibility}} </p>
+    <p>Vetar: brzinja {{rc.cityData.wind.speed}}m/s  i ugao duvanja: {{rc.cityData.wind.deg}} degrees </p>
+   </div>
 
-</div> <!--results -->
 
-<div id="googleMap" style="width:400px;height:400px; margin:auto"> <!--map -->
 
- <div tabela></div>
+
+
+ </div> <!--results -->
+
+ <div id="googleMap" style="width:400px;height:400px; margin:auto"></div><!--map -->
+
+ <my-result temp="{{rc.cityData.main.temp}}" pressure="{{rc.cityData.main.pressure}}" humidity="{{rc.cityData.main.humidity}}" min="{{rc.cityData.main.temp_min}}" max="{{rc.cityData.main.temp_max}}" visibility="{{rc.cityData.visibility}}" speed="{{rc.cityData.wind.speed}}" deg="{{rc.cityData.wind.deg}}" name="{{rc.cityData.name}}"></my-result>

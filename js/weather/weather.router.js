@@ -49,12 +49,12 @@
 
         function getCity(WeatherService, $stateParams){
             return WeatherService.getApi($stateParams.city)
-                .then(function(data){
+                .success(function(data){
+                    return data;
+                })
+                .error(function(data, status){
                     return data;
                 });
-                /*.error(function(data, status){
-                    console.log(status);
-                });*/
             }
     }
 })();
